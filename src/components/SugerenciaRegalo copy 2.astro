@@ -115,7 +115,7 @@
                     <!-- Botón CONTACTO con MANO -->
                     <div class="relative">
                         <a
-                            href="https://wa.me/59169000200?text=Hola%2C%20quisiera%20hacer%20un%20regalo%20para%20la%20boda%20de%20Robert%20Brayan%20y%20Zulema."
+                            href="https://wa.me/59167076999?text=Hola%2C%20quisiera%20consultar%20sobre%20la%20mesa%20de%20regalos%20de%20Robert%20Brayan%20y%20Zulema."
                             target="_blank"
                             rel="noopener noreferrer"
                             class="bg-[#4E5F49] hover:bg-[#3d4a39]
@@ -133,6 +133,30 @@
                             alt="Presionar aquí"
                             class="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 object-contain opacity-0 pointer-events-none z-20"
                             id="mano-regalo-contacto"
+                        />
+                    </div>
+
+                    <!-- Botón UBICACIÓN con MANO -->
+                    <div class="relative">
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Multicenter+Centenario+4to+Anillo+Santa+Cruz"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="bg-[#4E5F49] hover:bg-[#3d4a39]
+                    text-white px-6 py-2.5 rounded-xl text-sm md:text-base
+                    lg:text-lg xl:text-xl font-semibold transition-all
+                    duration-300 shadow-md hover:shadow-lg block"
+                            id="btn-ubicacion-regalo"
+                        >
+                            Ver ubicación
+                        </a>
+
+                        <!-- MANO apuntando al botón -->
+                        <img
+                            src="/imagenes/mano.png"
+                            alt="Presionar aquí"
+                            class="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 object-contain opacity-0 pointer-events-none z-20"
+                            id="mano-regalo-ubicacion"
                         />
                     </div>
                 </div>
@@ -296,7 +320,7 @@
         gsap.set("#tarjeta-multicenter", { opacity: 0, y: 30, scale: 0.95 });
 
         // Manos apuntando a los botones
-        gsap.set("#mano-regalo-contacto", {
+        gsap.set("#mano-regalo-contacto, #mano-regalo-ubicacion", {
             opacity: 0,
             scale: 0.8,
         });
@@ -402,7 +426,7 @@
 
                     // 👆 MANOS - Después de los botones
                     .to(
-                        "#mano-regalo-contacto",
+                        "#mano-regalo-contacto, #mano-regalo-ubicacion",
                         {
                             opacity: 1,
                             scale: 1,
@@ -413,7 +437,7 @@
                     );
 
                 // ═══ ANIMACIÓN DE PRESIONAR BOTÓN (loop infinito) ═══
-                gsap.to("#mano-regalo-contacto", {
+                gsap.to("#mano-regalo-contacto, #mano-regalo-ubicacion", {
                     scale: 0.9,
                     duration: 0.6,
                     ease: "power1.inOut",
@@ -518,7 +542,9 @@
                 gsap.killTweensOf("#flor-right");
                 gsap.killTweensOf("#hoja-left");
                 gsap.killTweensOf("#hoja-right");
-                gsap.killTweensOf("#mano-regalo-contacto");
+                gsap.killTweensOf(
+                    "#mano-regalo-contacto, #mano-regalo-ubicacion",
+                );
 
                 const tl = gsap.timeline();
 
@@ -531,7 +557,7 @@
                 })
 
                     .to(
-                        "#mano-regalo-contacto",
+                        "#mano-regalo-contacto, #mano-regalo-ubicacion",
                         {
                             opacity: 0,
                             scale: 0.8,
